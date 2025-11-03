@@ -3,7 +3,7 @@
 
 int main() {
 
-	int i = 0;//ÃÊ±â°ª
+	int i = 0;//ì´ˆê¸°ê°’
 	int sum = 0;
 	while (i<100) {
 		
@@ -13,7 +13,7 @@ int main() {
 
 		
 	}
-	printf("%d±îÁö ÇÕ :%d\n", i, sum);
+	printf("%dê¹Œì§€ í•© :%d\n", i, sum);
 	return 0;
 
 }
