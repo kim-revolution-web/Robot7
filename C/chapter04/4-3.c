@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-
+//증감 연산자의 연산
 int main() {
 
 	int a, b=0;
@@ -17,4 +17,5 @@ int main() {
 
 
 	return 0;
+
 }
