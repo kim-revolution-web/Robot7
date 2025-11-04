@@ -8,10 +8,10 @@ int main() {
 		double res;
 	res = ((double)a) / ((double)b);
 	printf("a=%d, b= %d\n", a, b);
-	printf("a/bÀÇ °á°ú : %.1lf\n", res);
+	printf("a/bì˜ ê²°ê³¼ : %.1lf\n", res);
 
 	a = (int)res;
-	printf("(int) %.1lfÀÇ °á°ú :%d\n", res, a);
+	printf("(int) %.1lfì˜ ê²°ê³¼ :%d\n", res, a);
 
 	return 0;
 }
