@@ -1,21 +1,23 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
+//ë¬¸ìžì—´ì„ í™”ë©´ì— ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ëž¨
 int main()
 {
-	printf("Be happy\n"); // "Be happy"¸¦ Ãâ·ÂÇÏ°í ÁÙÀ» ¹Ù²Þ(\n)
-	printf("12345678901234567890\n"); // È­¸é¿¡ ¿­ ¹øÈ£ Ãâ·ÂÇÏ°í ÁÙÀ» ¹Ù²Þ(\n)
-	printf("My\tfriend\n");//"My"¸¦ Ãâ·ÂÇÏ°í ÅÇ À§Ä¡·Î ÀÌµ¿(\t) ÈÄ¿¡ "friend"¸¦ Ãâ·ÂÇÏ°í ÁÙÀ» ¹Ù²Þ(\n)
-	printf("Goot\bd\tchance\n"); // "Goot"¸¦ Ãâ·ÂÇÏ°í Ä­ ¿ÞÂÊÀ¸·Î ÀÌµ¿(\b)ÇØ
-	//t¸¦ d·Î ¹Ù²Ù°í ÅÇ À§Ä¡·Î ÀÌµ¿(\t) ÈÄ¿¡ "change" ¸¦ Ãâ·ÂÇÏ°í ÁÙÀ» ¹Ù²Þ(\n)
+	printf("Be happy\n"); // "Be happy"ë¥¼ ì¶œë ¥í•˜ê³  ì¤„ì„ ë°”ê¿ˆ(\n)
+	printf("12345678901234567890\n"); // í™”ë©´ì— ì—´ ë²ˆí˜¸ ì¶œë ¥í•˜ê³  ì¤„ì„ ë°”ê¿ˆ(\n)
+	printf("My\tfriend\n");//"My"ë¥¼ ì¶œë ¥í•˜ê³  íƒ­ ìœ„ì¹˜ë¡œ ì´ë™(\t) í›„ì— "friend"ë¥¼ ì¶œë ¥í•˜ê³  ì¤„ì„ ë°”ê¿ˆ(\n)
+	printf("Goot\bd\tchance\n"); // "Goot"ë¥¼ ì¶œë ¥í•˜ê³  ì¹¸ ì™¼ìª½ìœ¼ë¡œ ì´ë™(\b)í•´
+	//të¥¼ dë¡œ ë°”ê¾¸ê³  íƒ­ ìœ„ì¹˜ë¡œ ì´ë™(\t) í›„ì— "change" ë¥¼ ì¶œë ¥í•˜ê³  ì¤„ì„ ë°”ê¿ˆ(\n)
 	printf("Cow\rW\a\n");
-	//¸Ç ¾ÕÀ¸·Î ÀÌµ¿(\r)ÇØ C¸¦ W·Î ¹Ù²Ù°í º§¼Ò¸®(\a)¸¦ ³»°í ÁÙÀ» ¹Ù²Þ(\n)
+	//ë§¨ ì•žìœ¼ë¡œ ì´ë™(\r)í•´ Cë¥¼ Wë¡œ ë°”ê¾¸ê³  ë²¨ì†Œë¦¬(\a)ë¥¼ ë‚´ê³  ì¤„ì„ ë°”ê¿ˆ(\n)
 
 	printf("power\r\a\n");
-	//ÀÌµ¿¸¸ ÇÏ¸é º¯È­°¡ ¾øÀ½
+	//ì´ë™ë§Œ í•˜ë©´ ë³€í™”ê°€ ì—†ìŒ
 	printf("toucc\by mc\by bodc\by");
-	// /b¸¦ ¾´ ¿ÞÂÊÀ¸·Î ÇÑÄ­ÀÌµ¿
+	// /bë¥¼ ì“´ ì™¼ìª½ìœ¼ë¡œ í•œì¹¸ì´ë™
 
 	return 0;
+
 
 }
