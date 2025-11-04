@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-//전위 표기와 후위 쵸기를 사용한 증감 연산
+//전위 표기와 후위 표기를 사용한 증감 연산
 
 int main() {
 
@@ -19,3 +19,4 @@ int main() {
 	return 0;
 
 }
+
