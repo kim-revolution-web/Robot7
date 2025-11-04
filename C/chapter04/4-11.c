@@ -1,15 +1,16 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-
+// ì½¤ë§ˆ ì—°ì‚°ì
 int main() {
 
 	int a = 10, b = 20;
 	int res;
-	res = (++a, ++b); // '=' ¿Í ','ÀÇ ¿ì¼±¼øÀ§ ºñ±³ = °¡ ³ôÀ¸¹Ç·Î res¿¡ ++a °ªÀ» ÀúÀå
+	res = (++a, ++b); // '=' ì™€ ','ì˜ ìš°ì„ ìˆœìœ„ ë¹„êµ = ê°€ ë†’ìœ¼ë¯€ë¡œ resì— ++a ê°’ì„ ì €ì¥
 
-	printf("a:%d, b:%d\n", a, b);
-	printf("res:%d\n", res);
+	printf("a:%d, b:%d\n", a, b); //ì°¨ë ˆë¡œ ì—°ì‚°ì´ ìˆ˜í–‰ë˜ë©° ê²°ê³¼ì ìœ¼ë¡œ
+	printf("res:%d\n", res); // resì— ì €ì¥ë˜ëŠ” ê°’ì€ ì¦ê°€ëœ bì˜ ê°’ì´ë‹¤.
 
 	return 0;
+
 }
