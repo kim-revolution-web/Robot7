@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//¹İÈ¯°ªÀÌ ¾ø´Â ÇÔ¼ö
+//ë°˜í™˜ê°’ì´ ì—†ëŠ” í•¨ìˆ˜
 
 void print_char(char ch, int count);
 
