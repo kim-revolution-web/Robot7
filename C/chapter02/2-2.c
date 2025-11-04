@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-//문자열을 화면에 출력하는 프로그램
+//제어 문자를 사용한 출력
 int main()
 {
 	printf("Be happy\n"); // "Be happy"를 출력하고 줄을 바꿈(\n)
@@ -21,3 +21,4 @@ int main()
 
 
 }
+
