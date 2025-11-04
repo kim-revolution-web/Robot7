@@ -12,7 +12,7 @@ double average(a,b,c,d) {
 
 int main() {
 
-	printf("1~100ÀÇ ÀÚ¿¬¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+	printf("1~100ì˜ ìì—°ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 	scanf("%d %d %d %d", &a, &b, &c, &d);
 	double v = average(a, b, c, d);
 	printf("%.2lf",v );
