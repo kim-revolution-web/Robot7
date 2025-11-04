@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-//const¸¦ »ç¿ëÇÑ º¯¼ö
+//constë¥¼ ì‚¬ìš©í•œ ë³€ìˆ˜
 int main() {
 
 	int income = 0;
@@ -10,7 +10,7 @@ int main() {
 
 	income = 456;
 	tax = income * tax_rate;
-	printf("¼¼±İÀº : %.1lfÀÔ´Ï´Ù.\n", tax);
+	printf("ì„¸ê¸ˆì€ : %.1lfì…ë‹ˆë‹¤.\n", tax);
 
 
 
