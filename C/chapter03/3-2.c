@@ -2,16 +2,17 @@
 #include <stdio.h>
 
 
-//charÇü º¯¼ö
+//charí˜• ë³€ìˆ˜
 int main() {
 
-	char ch1 = 'A'; // ¹®ÀÚ·Î ÃÊ±âÈ­, ÀúÀåµÇ °ªÀ½ ¹«ÀÚÀÇ ¾Æ½ºÅ° °ª
-	char ch2 = 65; //  ¹®ÀÚ 'A'ÀÇ ¾Æ½ºÅ° ÄÚµå °ª¿¡ ÇØ´çÇÏ´Â Á¤¼ö·Î ÃÊ±âÈ­
+	char ch1 = 'A'; // ë¬¸ìžë¡œ ì´ˆê¸°í™”, ì €ìž¥ë˜ ê°’ìŒ ë¬¸ìžì˜ ì•„ìŠ¤í‚¤ ê°’
+	char ch2 = 65; //  ë¬¸ìž 'A'ì˜ ì•„ìŠ¤í‚¤ ì½”ë“œ ê°’ì— í•´ë‹¹í•˜ëŠ” ì •ìˆ˜ë¡œ ì´ˆê¸°í™”
 
-	printf("¹®ÀÚ %cÀÇ ¾Æ½ºÅ° ÄÚ±× °ª: %d\n", ch1, ch1);
-	printf("¾Æ½ºÅ° ÄÚµå °ªÀÌ %dÀÎ ¹®ÀÚ:%c\n", ch2, ch2);
+	printf("ë¬¸ìž %cì˜ ì•„ìŠ¤í‚¤ ì½”ê·¸ ê°’: %d\n", ch1, ch1);
+	printf("ì•„ìŠ¤í‚¤ ì½”ë“œ ê°’ì´ %dì¸ ë¬¸ìž:%c\n", ch2, ch2);
 
 	
 
 	return 0;
 }
+
