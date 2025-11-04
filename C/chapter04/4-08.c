@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-
+//형 변환 연산자가 필요한 경우
 int main() {
 
 	int a = 20, b = 3;
@@ -15,3 +15,4 @@ int main() {
 
 	return 0;
 }
+
