@@ -6,7 +6,7 @@ int main() {
 	int i = 10;
 	while ( i>0) {
 		
-		printf("°¨¼Ò : %d\n", i--);
+		printf("ê°ì†Œ : %d\n", i--);
 		
 	}
 }
