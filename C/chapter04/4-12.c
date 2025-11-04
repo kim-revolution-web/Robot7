@@ -8,7 +8,7 @@ int main() {
 
 	res = (a > b) ? a : b;
 
-	printf("Å«°ª %d:\n", res);
+	printf("í°ê°’ %d:\n", res);
 	
 	
 	/*if (a > b) {
@@ -19,7 +19,7 @@ int main() {
 		res = b;
 	}
 
-	printf("°ª : %d\n", res);*/
+	printf("ê°’ : %d\n", res);*/
 
 
 	return 0;
