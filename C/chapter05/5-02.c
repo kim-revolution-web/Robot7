@@ -12,7 +12,8 @@ int main() {
 	else {
 		a = -1;
 	}
-	printf("a°ªÀº :%d", a);
+	printf("a값은 :%d", a);
 	return 0;
 
 }
+
