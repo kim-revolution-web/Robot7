@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
+//if 문의 기본 형식
 
 int main() {
 
@@ -13,4 +14,5 @@ int main() {
 
 	printf("a: %d, b:%d\n", a, b);
 	return 0;
+
 }
