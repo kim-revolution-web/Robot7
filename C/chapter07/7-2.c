@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-//¸Å°³ º¯¼ö°¡ ¾ø´Â ÇÔ¼ö
+//ë§¤ê°œ ë³€ìˆ˜ê°€ ì—†ëŠ” í•¨ìˆ˜
 
 void myprintf();
 int get_num();
@@ -10,9 +10,10 @@ int main() {
 
 	int result;
 
-	result = get_num();
-	printf("¹İÈ¯°ª : %d\n", result);
-	
+	//result = get_num();
+	//printf("ë°˜í™˜ê°’ : %d\n", result);
+	printf("ë°˜í™˜ê°’ : %d\n", get_num()); //í•¨ìˆ˜ ìì²´ ë°”ë¡œ ì¶œë ¥
+
 	myprintf();
 	return 0;
 }
@@ -21,7 +22,7 @@ int get_num() {
 
 	int num;
 
-	printf("¾ç¼ö ÀÔ·Â: ");
+	printf("ì–‘ìˆ˜ ì…ë ¥: ");
 	scanf("%d", &num);
 
 	return num;
