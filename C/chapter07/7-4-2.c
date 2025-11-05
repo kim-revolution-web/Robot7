@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//¹İÈ¯ °ª°ú ¸Å°³ º¯¼ö°¡ ¸ğµÎ ¾ø´Â ÇÔ¼ö
+//ë°˜í™˜ ê°’ê³¼ ë§¤ê°œ ë³€ìˆ˜ê°€ ëª¨ë‘ ì—†ëŠ” í•¨ìˆ˜
 
 void print_line(int number);
 
@@ -9,7 +9,7 @@ void print_line(int number);
 int main() {
 
 	print_line(50);
-	printf("ÇĞ¹ø\tÀÌ¸§\tÀü°ø\tÇĞÁ¡\n");
+	printf("í•™ë²ˆ\tì´ë¦„\tì „ê³µ\tí•™ì \n");
 	print_line(50);
 
 	return 0;
