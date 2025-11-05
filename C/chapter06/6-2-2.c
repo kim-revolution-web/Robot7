@@ -5,7 +5,7 @@ int main() {
 
 	for(int i=0; i<5;i++){
 
-		printf("Hello World! %d¹ø\n",i);
+		printf("Hello World! %dÂ¹Ã¸\n",i);
 
 
 	}
