@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-
+// 중첩 반복문을 사용한 별 출력
 int main() {
 
 	for (int i = 0; i < 15; i++) {
@@ -21,4 +21,5 @@ int main() {
 	printf("\n\n");
 
 	return 0;
+
 }
