@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
+//배열과 반복문을 사용한 성적 처리 프로그램
 int main() {
 
 	int score[5];
