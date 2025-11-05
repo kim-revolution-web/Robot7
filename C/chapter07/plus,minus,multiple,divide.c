@@ -6,10 +6,11 @@ int minus(int a,int b);
 double multiple(int a, int b);
 double divide(int a, int b);
 
+//plus,minus,multiple,divide
 int main() {
 
 	int x=0, y=0;
-	printf("µÎ°³ÀÇ Á¤¼ö°ªÀ» ÀÔ·ÂÇÏ¼¼¿ä:");
+	printf("ë‘ê°œì˜ ì •ìˆ˜ê°’ì„ ì…ë ¥í•˜ì„¸ìš”:");
 	scanf("%d %d", &x, &y);
 	int p, mi;
 	double mu,di;
@@ -20,10 +21,10 @@ int main() {
 	di = divide(x, y);
 
 
-	printf("´õÇÏ±â :%d\n", p);
-	printf("»©±â :%d\n", mi);
-	printf("°öÇÏ±â :%.2lf\n", mu);
-	printf("³ª´©±â :%.2lf\n", di);
+	printf("ë”í•˜ê¸° :%d\n", p);
+	printf("ë¹¼ê¸° :%d\n", mi);
+	printf("ê³±í•˜ê¸° :%.2lf\n", mu);
+	printf("ë‚˜ëˆ„ê¸° :%.2lf\n", di);
 
 	return 0;
 }
