@@ -3,7 +3,7 @@
 
 //1. return(x), argument(x)
 void myprint() {
-	printf("myprit()\n");
+	printf("myprint()\n");
 }
 
 //2. return(o), argument(x)
@@ -40,4 +40,5 @@ int main() {
 	printf("%d\n", result);
 	printf("%d\n", sum(100,200,300));
 	return 0;
+
 }
