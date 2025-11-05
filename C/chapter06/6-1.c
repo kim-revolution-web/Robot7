@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-
+//while 문을 사용한 반복문
 int main() {
 
 	int i = 10;
@@ -18,3 +18,4 @@ int main() {
 
 	return 0;
 }
+
