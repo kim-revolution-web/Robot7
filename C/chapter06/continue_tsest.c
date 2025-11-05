@@ -10,7 +10,7 @@ int main() {
 			continue;
 		printf("%d\n", i);
 	}
-	
+	// for문 while 문 같은 형식
 	for (;;) {
 		printf("Hello\n");
 
@@ -22,4 +22,5 @@ int main() {
 
 
 	return 0;
+
 }
