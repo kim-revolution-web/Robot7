@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//반환 값과 매개 변수가 모두 없는 함수
+//반환 값이 없는 함수
 
 void print_line(int number);
 
@@ -23,3 +23,4 @@ void print_line(int number) {
 	printf("\n");
 
 }
+
