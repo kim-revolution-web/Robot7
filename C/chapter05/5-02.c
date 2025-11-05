@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
+//if ~else문의 사용
 
 int main() {
 
@@ -11,6 +12,7 @@ int main() {
 	else {
 		a = -1;
 	}
-	printf("a���� :%d", a);
+	printf("a°ªÀº :%d", a);
 	return 0;
+
 }
