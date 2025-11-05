@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-
+//if ~else if ~else 문 사용 
 int main() {
 
 	int a = 9, b = 0;
@@ -18,4 +18,5 @@ int main() {
 	printf("b: %d\n", b);
 
 	return 0;
+
 }
