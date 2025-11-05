@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-
+//중첩된 if문
 int main() {
 	int a = 20, b = 10;
 
@@ -19,3 +19,4 @@ int main() {
 	printf("a : %d, b: %d\n", a, b);
 	return 0;
 }
+
