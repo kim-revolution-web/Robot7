@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include<stdio.h>
-//recursive ¹æ½Ä
+//recursive ë°©ì‹
 
 //5!= 5 4 3 2 1
 //      5* 4!= 4 3 2 1
@@ -24,4 +24,5 @@ int main() {
 	printf("result=%d\n", result);
 
 	return 0;
+
 }
