@@ -3,14 +3,14 @@
 #include<stdio.h>
 
 
-int Factorial(int N) {
+// int Factorial(int N) {
 
-	if (N > 0)
-	{
-		return	N * Factorial(N - 1);
-	}
-	else
-		return 1;
+// 	if (N > 0)
+// 	{
+// 		return	N * Factorial(N - 1);
+// 	}
+// 	else
+// 		return 1;
 
 }
 
@@ -20,12 +20,12 @@ int main() {
 	int N = 5;
 	//scanf("%d",&N);  //5
 
-	int dp[10]; // °ª ÀúÀå ¹è¿­, º¯¼ö¿¡ °ªÀ» ÀúÀå!
+	int dp[10]; // ê°’ ì €ì¥ ë°°ì—´, ë³€ìˆ˜ì— ê°’ì„ ì €ì¥!
 
-	dp[0] = 1; // 0¹øÁö ÃÊ±âÈ­
+	dp[0] = 1; // 0ë²ˆì§€ ì´ˆê¸°í™”
 
 	for (int i = 1; i < 10; i++) {
-		//Á¡È­½Ä
+		//ì í™”ì‹
 
 		dp[i] = i * dp[i - 1]; //f(N) = N!*f(N-1)
 
@@ -33,4 +33,5 @@ int main() {
 	printf("%d!=%d\n", N, dp[N]);
 
 	return 0;
+
 }
