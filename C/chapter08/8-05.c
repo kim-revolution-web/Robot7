@@ -1,7 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
-#include<string.h> //ÇØ´õ°¡ ÀÖ¾î¾ß ÀÛµ¿ÇÑ´Ù
+#include<string.h> //í•´ë”ê°€ ìˆì–´ì•¼ ì‘ë™í•œë‹¤
 
+//
 int main() {
 
 	char str1[80] = "cat";
@@ -12,4 +13,5 @@ int main() {
 	printf("%s, %s\n", str1, str2);
 
 	return 0;
+
 }
