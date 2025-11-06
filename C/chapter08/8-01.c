@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
+//5명의 나이를 저장할 배열을 선언하고 사용하는 방법
 int main() {
 
 	int ary[5];  //int형 요소 5개의 배열 선언
