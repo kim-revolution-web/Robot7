@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
+//띄워쓰기 입력이 안됨
 //문자열을 저장하는 char형 배열
 int main() {
 
