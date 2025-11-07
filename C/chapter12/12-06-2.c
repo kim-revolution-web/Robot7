@@ -5,13 +5,13 @@ int main() {
 
 	char strAge[20];
 	char name[20];
-	printf("³ªÀÌ ÀÔ·Â :");
+	printf("ë‚˜ì´ ì…ë ¥ :");
 	fgets(strAge, 10, stdin);
 	int age = atoi(strAge);
 
-	printf("ÀÌ¸§ ÀÔ·Â :");
+	printf("ì´ë¦„ ì…ë ¥ :");
 	fgets(name, 20, stdin);
-	printf("ÀÌ¸§ : %s\n",name);
+	printf("ì´ë¦„ : %s\n",name);
 
 
 	return 0;
