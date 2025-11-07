@@ -1,13 +1,14 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
+//ì£¼ì†Œë¥¼ ë°˜í™˜í•˜ì—¬ ë‘ ì •ìˆ˜ì˜ í•© ê³„ì‚°
 int* sum(int a, int b);
 
 int main() {
 	int* resp;
 
 	resp = sum(10, 20);
-	printf("µÎ Á¤¼öÀÇ ÇÕ: %d\n", *resp);
+	printf("ë‘ ì •ìˆ˜ì˜ í•©: %d\n", *resp);
 
 	return 0;
 }
@@ -29,7 +30,7 @@ int* sum(int a,int b)
 //	int resp;
 //
 //	resp = sum(10, 20);
-//	printf("µÎ Á¤¼öÀÇ ÇÕ: %d\n",resp);
+//	printf("ë‘ ì •ìˆ˜ì˜ í•©: %d\n",resp);
 //
 //	return 0;
 //}
