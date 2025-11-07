@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include<string.h>
 
+//strcat,strncat  함수를 사용한 문자열 붙이기
 int main() {
 	
 	char str[80] = "straw";
@@ -14,3 +15,4 @@ int main() {
 
 	return 0;
 }
+
