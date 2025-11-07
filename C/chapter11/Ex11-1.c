@@ -5,7 +5,7 @@ int main() {
 
 	char ch=getchar();
 
-	printf("¹®ÀÚ ÀÔ·Â :");
+	printf("ë¬¸ì ì…ë ¥ :");
 	/*scanf("%c", &ch);*/
 	
 	/*printf("%d", ch);*/
@@ -13,3 +13,4 @@ int main() {
 
 	return 0;
 }
+
