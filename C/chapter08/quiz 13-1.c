@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-//¹è¿­°ú ¹İº¹¹®À» »ç¿ëÇÑ ¼ºÀû Ã³¸® ÇÁ·Î±×·¥
+//ë°°ì—´ê³¼ ë°˜ë³µë¬¸ì„ ì‚¬ìš©í•œ ì„±ì  ì²˜ë¦¬ í”„ë¡œê·¸ë¨
 int main() {
 
 	int score[10];
@@ -9,7 +9,7 @@ int main() {
 	int multiple_of_2[5] ;
 	int max =0;
 	int index = 0;
-	// Â¦¼ö¹øÂ° ¸¸ Ãâ·Â
+	// ì§ìˆ˜ë²ˆì§¸ ë§Œ ì¶œë ¥
 	for (i = 0; i < 10; i++) {
 
 		scanf("%d", &score[i]);
@@ -20,10 +20,10 @@ int main() {
 		
 		if (score[i] % 2 == 0) {
 			
-			printf("2ÀÇ ¹è¼ö %5d\n", score[i]);
+			printf("2ì˜ ë°°ìˆ˜ %5d\n", score[i]);
 		}
 		
-		//¹è¿­ÀÇ ÃÖ´ë°ª°ú index¸¦ ±¸ÇÏ¶ó.
+		//ë°°ì—´ì˜ ìµœëŒ€ê°’ê³¼ indexë¥¼ êµ¬í•˜ë¼.
 		if (max > score[i]==0) {
 			max = score[i];
 			index = i;
@@ -31,8 +31,8 @@ int main() {
 		
 	}
 	printf("index %5d\n", index);
-		printf("°¡Àå Å«¼ö %5d\n", max);
-	if (3 < 2 == 1) printf("È®ÀÎ\n"); 
+		printf("ê°€ì¥ í°ìˆ˜ %5d\n", max);
+	if (3 < 2 == 1) printf("í™•ì¸\n"); 
 	
 	return 0;
 }
