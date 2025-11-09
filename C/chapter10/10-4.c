@@ -1,23 +1,24 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//Æ÷ÀÎÅÍÀÇ »¬¼À°ú °ü°è ¿¬»ê
+//í¬ì¸í„°ì˜ ëº„ì…ˆê³¼ ê´€ê³„ ì—°ì‚°
 int main() {
 
 	int ary[5] = { 10,20,30,40,50 };
-	int* pa = ary; //Ã¹¹øÂ° ¹è¿­ ¿ä¼Ò ÁÖ¼Ò
-	int* pb = pa + 3; // ³× ¹øÂ° ¹è¿­ ¿ä¼Ò ÁÖ¼Ò
+	int* pa = ary; //ì²«ë²ˆì§¸ ë°°ì—´ ìš”ì†Œ ì£¼ì†Œ
+	int* pb = pa + 3; // ë„¤ ë²ˆì§¸ ë°°ì—´ ìš”ì†Œ ì£¼ì†Œ
 
 	printf("pa : %u\n", pa);
 	printf("pb : %u\n", pb);
 
-	pa++; // pa¸¦ ´ÙÀ½ ¹è¿­ ¿ä¼Ò·Î ÀÌµ¿
-	printf("pb-pa: %u\n",pb - pa); // µÎ Æ÷ÀÎÅÍÀÇ »¬¼À
+	printf("pb-pa: %u\n", pb - pa);//ì´ë™ ì „
+	pa++; // paë¥¼ ë‹¤ìŒ ë°°ì—´ ìš”ì†Œë¡œ ì´ë™
+	printf("pb-pa: %u\n", pb - pa); // ë‘ í¬ì¸í„°ì˜ ëº„ì…ˆ
 
-	printf("¾Õ¿¡ ÀÖ´Â ¹è¿­ ¿ä¼ÒÀÇ °ª Ãâ·Â :");
-	if (pa < pb) printf("%d\n", *pa); //pa°¡ ¹è¿­ÀÇ ¾Õ¿¡ ÀÖÀ¸¸é *pa Ãâ·Â
-	else printf("%d\n", *pb); // pb °¡ ¹è¿­ÀÇ ¾Õ¿¡ ÀÖÀ¸¸é *pb Ãâ·Â 
-	//pb °ª Ãâ·Â
+	printf("ì•ì— ìˆëŠ” ë°°ì—´ ìš”ì†Œì˜ ê°’ ì¶œë ¥ :");
+	if (pa < pb) printf("%d\n", *pa); //paê°€ ë°°ì—´ì˜ ì•ì— ìˆìœ¼ë©´ *pa ì¶œë ¥
+	else printf("%d\n", *pb); // pb ê°€ ë°°ì—´ì˜ ì•ì— ìˆìœ¼ë©´ *pb ì¶œë ¥ 
+	//pb ê°’ ì¶œë ¥
 	if (pa > pb) printf("%d\n", *pa);
 	else printf("%d\n", *pb);
 
