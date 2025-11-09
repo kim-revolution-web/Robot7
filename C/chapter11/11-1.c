@@ -1,19 +1,20 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//´ë¹®ÀÚ¸¦ ¼Ò¹®ÀÚ·Î º¯°æ
+//ëŒ€ë¬¸ìë¥¼ ì†Œë¬¸ìë¡œ ë³€ê²½
 int main() {
 
 	char small, cap = 'G';
 
-	if (('Z' >=cap ) && (cap >= 'A')) {
+	if (('Z' >= cap) && (cap >= 'A')) {
 
 		small = cap + ('a' - 'A');
 
 
 	}
-	printf("´ë¹®ÀÚ : %c %c", cap, '\n');
-	printf("¼Ò¹®ÀÚ : %c", small);
+	printf("ëŒ€ë¬¸ì : %c %c", cap, '\n');
+	//nullë„ ë¬¸ìë¡œ ë„£ì„ ìˆ˜ ìˆìŒ
+	printf("ì†Œë¬¸ì : %c", small);
 
 
 
