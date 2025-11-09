@@ -1,16 +1,16 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//gets ÇÔ¼ö·Î ÇÑ ÁÙÀÇ ¹®ÀÚ¿­ ÀÔ·Â
+//gets í•¨ìˆ˜ë¡œ í•œ ì¤„ì˜ ë¬¸ìì—´ ì…ë ¥
 int main() {
 
 	char str[80];
 
-	printf("°ø¹éÀÌ Æ÷ÇÑµÈ ¹®ÀÚ¿­ ÀÔ·Â:");
-	//gets(str); //¹è¿­¸íÀ¸·Î ÁÖ°í ÇÔ¼ö È£Ãâ
-	fgets(str, 80, stdin);
-	printf("ÀÔ·ÂÇÑ ¹®ÀÚ¿­Àº %s ÀÔ´Ï´Ù.", str);
-
+	printf("ê³µë°±ì´ í¬í•œëœ ë¬¸ìì—´ ì…ë ¥:");
+	//gets(str); //ë°°ì—´ëª…ìœ¼ë¡œ ì£¼ê³  í•¨ìˆ˜ í˜¸ì¶œ
+	fgets(str, 80, stdin); //\nì„ ë„£ì–´ì¤Œ
+	printf("ì…ë ¥í•œ ë¬¸ìì—´ì€ %s ì…ë‹ˆë‹¤.", str);
+	fputs(str,stdout);//\nì„ ë„£ì–´ì¤Œ
 
 	return 0;
 }
