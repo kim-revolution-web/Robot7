@@ -1,40 +1,34 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <string.h>
-//¾ËÆÄºª a~z±îÁö °í¸£°í
-	//A~Z±îÁö°í¸£°í
-	//¼ıÀÚ °í¸£°í
-	//Æ¯¼ö¹®ÀÚ °í¸£°í
-	//if ÇÒ±î? ¾Æ´Ï¸é Æ÷ÀÎÅÍ·Î ÁÖ¼Ò °ªÀ¸·Î ¸Å°³º¯¼ö¿¡ ´øÁú±î?
+//ì•ŒíŒŒë²³ a~zê¹Œì§€ ê³ ë¥´ê³ 
+	//A~Zê¹Œì§€ê³ ë¥´ê³ 
+	//ìˆ«ì ê³ ë¥´ê³ 
+	//íŠ¹ìˆ˜ë¬¸ì ê³ ë¥´ê³ 
+	//if í• ê¹Œ? ì•„ë‹ˆë©´ í¬ì¸í„°ë¡œ ì£¼ì†Œ ê°’ìœ¼ë¡œ ë§¤ê°œë³€ìˆ˜ì— ë˜ì§ˆê¹Œ?
 
 
 int main() {
 
 	char str[80] = { 0, };
-	char a;
-	char B;
-	char num;
-	char text;
-	char size;
+	
 
 	/*size = sizeof(arr) / sizeof(arr[0]);*/
 	scanf("%s", str);
 	int cntBig = 0, cntSmall = 0, cntNumber = 0, cntSpecial = 0;
-	
+
 	for (int i = 0; i < strlen(str); i++) {
 		if ((str[i] >= 'A') && (str[i] <= 'Z')) cntBig++;
 		else if ((str[i] >= 'a') && (str[i] <= 'z')) cntSmall++;
 		else if ((str[i] >= '0') && (str[i] <= '9')) cntNumber++;
 		else cntSpecial++;
 	}
-	printf("´ë¹®ÀÚ : %d\n", cntBig);
-	printf("¼Ò¹®ÀÚ : %d\n", cntSmall);
-	printf("´ë¹®ÀÚ : %d\n", cntNumber);
-	printf("´ë¹®ÀÚ : %d\n", cntSpecial);
+	printf("ëŒ€ë¬¸ì : %d\n", cntBig);
+	printf("ì†Œë¬¸ì : %d\n", cntSmall);
+	printf("ìˆ«ì : %d\n", cntNumber);
+	printf("íŠ¹ìˆ˜ë¬¸ì : %d\n", cntSpecial);
 
 	return 0;
 }
 
-//char a (char* p,char size){
-//	for(char a='a';a<='z';'a'++)
-//}
+
