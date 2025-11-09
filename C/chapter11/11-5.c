@@ -1,20 +1,21 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//ÀÔ·Â ¹®ÀÚÀÇ ¾Æ½ºÅ° ÄÚµå °ªÀ» Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥
+//ì…ë ¥ ë¬¸ìì˜ ì•„ìŠ¤í‚¤ ì½”ë“œ ê°’ì„ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨
 int main() {
 
 	int res;
 	char ch;
-	
+
 	while (1)
 	{
-		res = scanf("%c",&ch);
-		/*printf("%d", res);*/
-
+		res = scanf("%c", &ch);
+		//printf("%d", res);
+		//\n ê°œí–‰ê¹Œì§€ ë²„í¼ì— ì €ì¥ \n==10;
+		
 		if (res == -1)break;
-
-		printf("%d",ch);
+		//-1==EOF
+		printf("%d", ch);
 
 	}
 
