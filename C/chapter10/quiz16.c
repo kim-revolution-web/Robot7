@@ -1,7 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-//Q11) ¹è¿­ÀÇ ¿ä¼Ò Áß °¡Àå Å«°ªÀ» Ãâ·ÂÇØ ÁÖ¼¼¿ä.´Ü, ÇÔ¼ö·Î.
+//Q16) ë°°ì—´ì˜ ìš”ì†Œ ì¤‘ ê°€ì¥ í°ê°’ì„ ì¶œë ¥í•´ ì£¼ì„¸ìš”.ë‹¨, í•¨ìˆ˜ë¡œ.
 
 void print_max(int* pa) // (int p[])
 {
@@ -24,4 +24,5 @@ int main() {
 	print_max(array);
 
 	return 0;
+
 }
