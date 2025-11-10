@@ -5,7 +5,7 @@ void print_str(char** pps, int cnt);
 
 int main() {
 
-	//char ptrAry[4][10]; //¹®ÀÚ¿­ ¹è¿­ »ó¼ö
+	//char ptrAry[4][10]; //ë¬¸ìì—´ ë°°ì—´ ìƒìˆ˜
 	//char* ptr_ary1[4 = { "ealge","tiger","lion","squirrel" };
 	char* ptr_ary[4] = { "ealge","tiger","lion","squirrel" };
 	char** ptr_ary3 = (char*[]){ "ealge","tiger","lion","squirrel" };
