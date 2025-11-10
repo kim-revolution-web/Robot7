@@ -6,7 +6,7 @@
 
 void swap(int *a, int *b);
 
-main() {
+int main() {
 
 	int a, b;
 
@@ -32,3 +32,4 @@ void swap(int *a, int *b)
 	*b = temp;
 
 }
+
