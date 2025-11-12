@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include<string.h>
 
-
+// 3개의 문자열을 저장하기 위한 동적 할당
 int main() {
 
 	char temp[80];
@@ -29,4 +29,5 @@ int main() {
 
 	return 0;
 }
+
 
