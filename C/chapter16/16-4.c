@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include<string.h>
 
-// 3°³ÀÇ ºĞÀÚ¿­À» ÀúÀåÇÏ±â À§ÇÑ µ¿Àû ÇÒ´ç
+
 int main() {
 
 	char temp[80];
@@ -12,20 +12,21 @@ int main() {
 
 	for(i=0;i<3;i++)
 	{
-		printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä :");
+		printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš” :");
 		fgets(temp, sizeof(temp), stdin);
 		//gets(temp);
-		str[i] = (char*)malloc(strlen(temp) + 1);// NULL ³Ö¾îÁÙ·Á°í +1
+		str[i] = (char*)malloc(strlen(temp) + 1);// NULL ë„£ì–´ì¤„ë ¤ê³  +1
 		//str[i]= (char*)calloc(strlen(temp) +1,sizeof(char));
-		strcpy(str[i], temp); //µ¿Àû ÇÒ´ç ¿µ¿ª0
+		strcpy(str[i], temp); //ë™ì  í• ë‹¹ ì˜ì—­0
 	}
 	for (i = 0; i < 3; i++) {
 		printf("%s\n", str[i]);
 	}
 	for (i = 0; i < 3; i++) {
-		free(str[i]);//µ¿Àû ÇÒ´ç
+		free(str[i]);//ë™ì  í• ë‹¹
 	}
 
 
 	return 0;
 }
+
