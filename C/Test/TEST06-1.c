@@ -9,11 +9,11 @@ int main() {
 
 	int A = 0, a = 0, n = 0, s = 0;
 
-	printf("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä :");
+	printf("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš” :");
 	//scanf("%s",z);
 	//gets(z);
 	fgets(z, strlen(z), stdin);
-	strcmp('\n') = \0;
+	z[strcmp(z,"\n")] = '\0';
 	
 	// for (int i = 0; i <strlen(z); i++)
 	
@@ -26,10 +26,10 @@ int main() {
 	}
 	
 	
-	printf("¾ËÆÄºª ´ë¹®ÀÚ %d\n", A);
-	printf("¾ËÆÄºª ¼Ò¹®ÀÚ %d\n", a);
-	printf("¾ËÆÄºª ¼ıÀÚ %d\n", n);
-	printf("¾ËÆÄºª Æ¯¼ö %d\n", s);
+	printf("ì•ŒíŒŒë²³ ëŒ€ë¬¸ì %d\n", A);
+	printf("ì•ŒíŒŒë²³ ì†Œë¬¸ì %d\n", a);
+	printf("ì•ŒíŒŒë²³ ìˆ«ì %d\n", n);
+	printf("ì•ŒíŒŒë²³ íŠ¹ìˆ˜ %d\n", s);
 
 
 
@@ -37,3 +37,4 @@ int main() {
 
 	return 0;
 }
+
