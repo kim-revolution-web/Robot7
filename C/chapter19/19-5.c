@@ -3,7 +3,7 @@
 #define PRINT_EXPR(x) printf(#x "= %d\n",x)
 #define NAME_CAT(x,y)(x##y)
 
-//#°ú ##À» »ç¿ëÇÑ ¸ÅÅ©·Î ÇÔ¼ö
+//#ê³¼ ##ì„ ì‚¬ìš©í•œ ë§¤í¬ë¡œ í•¨ìˆ˜
 int main() {
 
     int a1, a2;
@@ -14,4 +14,5 @@ int main() {
     PRINT_EXPR(a2 - a1);// printf("a2- a2" =%d\n",a2- a1);
 
     return 0;
+
 }
