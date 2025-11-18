@@ -1,8 +1,9 @@
 #include<stdio.h>
 
-//¿­°ÅÇüÀ» »ç¿ëÇÑ ÇÁ·Î±×·¥
+//ì—´ê±°í˜•ì„ ì‚¬ìš©í•œ í”„ë¡œê·¸ëž¨
 
 enum season { SPRING, SUMMER, FALL, WINTER };
+////SPRING â†’ 0, SUMMER â†’ 1,FALL â†’ 2 ,WINTER â†’ 3
 
 int main() {
     enum season ss;
@@ -24,7 +25,8 @@ int main() {
 
         pc = "skiing"; break;
     }
-    printf("³ªÀÇ ·¹Àú È°µ¿ =>%s\n", pc);
+    printf("ë‚˜ì˜ ë ˆì € í™œë™ =>%s\n", pc);
 
     return 0;
+
 }
