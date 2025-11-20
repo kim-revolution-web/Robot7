@@ -1,31 +1,37 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-// ÆÄÀÏÀÇ ³»¿ëÀ» È­¸é¿¡ Ãâ·ÂÇÏ±â
+// íŒŒì¼ì˜ ë‚´ìš©ì„ í™”ë©´ì— ì¶œë ¥í•˜ê¸°
 int main() {
 
-    FILE* fp;
-    int ch;
+	FILE* fp;
+	int ch;
+	char str[80];
 
-    /*char* path = "/home/robot/work/basic/chapter18/a.txt";
-    fp = fopen(path, "r");*/
+	/*char path = "/home/robot/work/basic/chapter18/a.txt";
+	fp = fopen(path, "r");*/ 
 
-    fp = fopen("a.txt","r");
-    if (fp == NULL) {
-        printf("ÆÄÀÏÀÌ ¿­¸®Áö ¾Ê¾Ò½À´Ï´Ù.\n");
-        return 1;
+	fp = fopen("a.txt", "r");
+	if (fp == NULL) {
+		printf("íŒŒì¼ì´ ì—´ë¦¬ì§€ ì•Šì•˜ìŠµë‹ˆë‹¤.\n");
+		return 1;
 
-    }
-    while (1)
-    {
-        ch = fgetc(fp); //ÇÑ±ÛÀÚ¸¦ °¡Á®¿À´Â ÇÔ¼ö
-        if (ch == EOF)break; //(-1)ÆÄÀÏÀÇ ³¡ 
+	}
+	while (1)
+	{
+		ch = fgetc(fp); //í•œê¸€ìë¥¼ ê°€ì ¸ì˜¤ëŠ” í•¨ìˆ˜
+		if (ch == EOF)break; //(-1)íŒŒì¼ì˜ ë 
 
-        putchar(ch); //printf("%c",ch);
-    }
-    fclose(fp); //ÀÚ¿ø (Resource) ¹İÈ¯
+		putchar(ch); //printf("%c",ch);
+	}
+	
+	putchar('\n');
+	//rewind(fp); //ì²˜ìŒ + EOF/ì—ëŸ¬ ì´ˆê¸°í™”
+	fseek(fp, 0, SEEK_SET); // ì²˜ìŒ + EOF ì´ˆê¸°í™”
+	fgets(str,sizeof(str),fp);
+	fputs(str,stdout);
 
+	fclose(fp); //ìì› (Resource) ë°˜í™˜
 
-
-    return 0;
+	return 0;
 }
