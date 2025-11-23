@@ -16,11 +16,12 @@ int main() {
 	fclose(afp);
 	fclose(bfp);
 
-	bfp = fopen("b,txt", "rb");
+	bfp = fopen("b.txt", "rb");
 	fread(&res, sizeof(res), 1, bfp);
 	printf("%d", res);
 
 	fclose(bfp);
 
 	return 0;
+
 }
