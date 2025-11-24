@@ -2,12 +2,13 @@
 //#define MY_H
 //#pragma once
 
-//»ç¿ëÀÚ Á¤ÀÇ Çì´õÆÄÀÏ
+//ì‚¬ìš©ì ì •ì˜ í—¤ë” íŒŒì¼ì„ ì‚¬ìš©í•˜ëŠ” í”„ë¡œê·¸ë¨
 typedef struct
 {
 	int num;
 	char name[20];
 
 }Student;
+
 
 //#endif
