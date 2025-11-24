@@ -2,7 +2,8 @@
 #include<stdio.h>
 #define PRINT_EXPR(x) printf(#x "= %d\n",x)
 #define NAME_CAT(x,y)(x##y)
-
+//#문자열화 연산자 
+// ## 문자 결합 연산자
 //#과 ##을 사용한 매크로 함수
 int main() {
 
