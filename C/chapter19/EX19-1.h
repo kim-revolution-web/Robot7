@@ -1,5 +1,5 @@
 //#pragma once
-//header ÆÄÀÏ ÇÏ´Â ¿ªÇÒ : ÇÔ¼ö Á¤ÀÇ, ±¸Á¶Ã¼ Á¤ÀÇ
+//header íŒŒì¼ í•˜ëŠ” ì—­í•  : í•¨ìˆ˜ ì •ì˜, êµ¬ì¡°ì²´ ì •ì˜
 
 # ifndef _POINT_H_
 # define _POINT_H_
