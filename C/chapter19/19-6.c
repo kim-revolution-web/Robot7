@@ -3,23 +3,23 @@
 #define VER 7
 #define BIT16
 
-//#if,ifdef,$else,#endif¸¦ »ç¿ëÇÑ Á¶°ÇºÎ ÄÄÆÄÀÏ
+//#if,ifdef,$else,#endifë¥¼ ì‚¬ìš©í•œ ì¡°ê±´ë¶€ ì»´íŒŒì¼
 
 int main() {
 
     int max;
 
-#if VER>=6
-    printf("¹öÀü %dÀÔ´Ï´Ù.\n", VER);
+#if VER>=6 //ì „ì²˜ë¦¬ ifë¬¸ 
+    printf("ë²„ì „ %dì…ë‹ˆë‹¤.\n", VER);
 #endif
 
-#ifdef BIT16
+#ifdef BIT16  //ë§¤í¬ë¡œê°€ ì •ì˜ ë˜ì–´ ìˆìœ¼ë©´ ì‹¤í–‰ #ifndef ì´ ë§¤í¬ë¡œê°€ ì •ì˜ ë˜ì–´ ìˆì§€ ì•Šìœ¼ë©´ ì‹¤í–‰
     max = 32767;
 #else
     max = 2147483647;
 #endif
 
-    printf("intÇü º¯¼öÀÇ ÃÖ´ò°ª : %d\n", max);
+    printf("intí˜• ë³€ìˆ˜ì˜ ìµœëŒ”ê°’ : %d\n", max);
 
     return 0;
 }
