@@ -4,10 +4,10 @@
 
 int main() {
 
-	printf("Ã¹ ÁÂÇ¥ Gpoint =(%d,%d)\n", Gpoint.x, Gpoint.y);
+	printf("ì²« ì¢Œí‘œ Gpoint =(%d,%d)\n", Gpoint.x, Gpoint.y);
 	Gpoint.x = 10;
 	Gpoint.y = 20;
-	printf("º¯È¯ ÁÂÇ¥ Gpoint =(%d,%d)\n", Gpoint.x, Gpoint.y);
+	printf("ë³€í™˜ ì¢Œí‘œ Gpoint =(%d,%d)\n", Gpoint.x, Gpoint.y);
 
 	return 0;
 };
