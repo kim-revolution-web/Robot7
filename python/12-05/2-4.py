@@ -1,6 +1,0 @@
-output_a =str(234)
-output_b =str(53.345)
-print(type(output_a),output_a)
-print(type(output_b),output_b)
-print(not True)
-print(False)
