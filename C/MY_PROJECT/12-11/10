@@ -1,0 +1,561 @@
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+
+//구조체 활용이 되고 있는건가?
+// 부
+
+typedef enum {
+	id, pd, name, number,
+	RRN, adress, adress_after
+}What;
+
+typedef struct Privet
+{
+	char ID[20];
+	char PASSWARD[20];
+	char NAME[20];
+	char NUMBER[14]; //010-1234-1234;
+	char RRN[15]; //123456-1234567;
+	char ADRESS[50];
+	char ADRESS_AFTER[50];
+
+}privet;
+
+
+
+
+
+//만든 함수
+void read_stdin(char* buf, int size) {
+	int ch = 0;
+	int i = 0;
+
+	//오류제거 
+	if (size <= 0) { printf("size가 없다"); return; }
+	//fgets  오류 NULL
+	if (fgets(buf, size, stdin) == NULL)
+	{
+		buf[0] = '\0';
+		printf("입력이 없네");
+		return;
+	}
+	//fgets에 \n\0 들어가는데 \n 지우기 
+	i = (int)strcspn(buf, "\r\n");
+	if (buf[i] == '\r' || buf[i] == '\n')
+	{
+		buf[i] = '\0';
+	}
+	//버퍼보다 큰거 지우고 버퍼에 남는 \n 지우기
+	else {
+		while ((ch = getchar()) != '\n' && ch != EOF) {}
+	}
+}
+
+void mask_number(char* dst, size_t dst_size, char* src)
+{
+
+	if (dst == NULL || dst_size == 0 || src == NULL) {
+		if (dst != NULL && dst_size > 0) {
+			dst[0] = '\0';   // 최소한 빈 문자열로 세팅
+		}
+		printf("mask 반사\n");
+		return;
+	}
+
+	strcpy_s(dst, dst_size, src);
+	//dst[dst_size - 1] = '\0';
+
+	char* p = strchr(dst, '-');
+	if (!p)return;
+	p++;
+
+	for (int i = 0; *p && i < 4; i++) {
+		if (*p != '-') *p = 'X';
+		p++;
+	}
+}
+
+void mask_rrn(char* dst, const char* src) {
+	int i = 0;
+
+	if (dst == NULL) return;
+
+	if (src == NULL) {
+		dst[0] = '\0';
+		printf("mask_rrn");
+		return;
+	}
+
+	for (i = 0; src[i] != '\0'; i++) {
+		dst[i] = src[i];
+	}
+	dst[i] = '\0';
+
+	//012345-7890123
+	for (i = 8; dst[i] != '\0'; i++) {
+		dst[i] = 'X';
+	}
+}
+//파일열어서 원하는 id,pd묶음으로 전달해주기
+//전역 변수에 넣어서 값을 줘야하나?
+int my_exists(char *ex,What field) {
+	FILE* fpr;
+
+	char str[256];
+	char* efile_id;
+	char* efile_pd;
+	char* efile_name;
+	char* efile_number;
+	char* efile_RRN;
+	
+
+	if (fopen_s(&fpr, "i.txt", "r") != 0 || fpr == NULL) {
+		printf("회원 정보가 파일이 없습니다");
+		return 0;
+	}
+	while (fgets(str, sizeof(str), fpr) != NULL) {
+		str[strcspn(str, "\r\n")] = '\0';
+
+		char* con = NULL;
+		efile_id = strtok_s(str, "|", &con);//id
+		efile_pd = strtok_s(NULL, "|", &con);//pd
+		efile_name = strtok_s(NULL, "|", &con); //name
+		efile_number = strtok_s(NULL, "|", &con); //number
+		efile_RRN = strtok_s(NULL, "|", &con); //rrn
+		if (!efile_id || !efile_pd || efile_name == NULL ||
+			efile_number == NULL || efile_RRN == NULL)
+		{
+			continue;
+		}
+
+		switch (field) {
+		case id:
+			if (strcmp(efile_id, ex) == 0) {
+				fclose(fpr);
+				return 1;
+			}
+			break;
+		case pd:
+			if (strcmp(efile_pd, ex) == 0) {
+				fclose(fpr);
+				return 1;
+			}
+			break;
+		case name:
+			if (strcmp(efile_name, ex) == 0) {
+				fclose(fpr);
+				return 1;
+			}
+			break;
+		case number:
+			if (strcmp(efile_number, ex) == 0) {
+				fclose(fpr);
+				return 1;
+			}
+			break;
+		case RRN:
+			if (strcmp(efile_RRN, ex) == 0) {
+				fclose(fpr);
+				return 1;
+			}
+			break;
+		default:
+			break;
+		}
+	}
+	//*
+	fclose(fpr);
+	return 0;
+}
+
+//void parse_privet(char* parse1) {
+//
+//	char str[256] = { 0 };
+//	char* par;
+//
+//	privet par_tmp;
+//
+//	if (parse1 == NULL) { printf("privet 값이 없음"); return; }
+//
+//	FILE* fpr;
+//	if (fopen_s(&fpr, "i.txt", "r") != 0 || fpr == NULL) {
+//		printf("파씽 파일 못 열었다");
+//		return;
+//	}
+//	while (fgets(str, sizeof(str), fpr) != NULL)
+//	{
+//		str[strcspn(str, "\r\n")] = '\0';
+//
+//		char* con = NULL;
+//
+//		par = strtok_s(str, "|", &con);//id
+//		if (!par)continue;
+//		strcpy_s(par_tmp.ID, sizeof(par_tmp.ID), par);
+//		if (strcmp(par_tmp.ID, parse1) == 0) {
+//			par = strtok_s(NULL, "|", &con);//pd
+//			if (!par)continue;
+//			strcpy_s(par_tmp.PASSWARD, sizeof(par_tmp.PASSWARD), par);
+//
+//			par = strtok_s(NULL, "|", &con); //name
+//			if (!par)continue;
+//			strcpy_s(par_tmp.NAME, sizeof(par_tmp.NAME), par);
+//
+//			par = strtok_s(NULL, "|", &con); //number
+//			if (!par)continue;
+//			strcpy_s(par_tmp.NUMBER, sizeof(par_tmp.NUMBER), par);
+//
+//			par = strtok_s(NULL, "|", &con); //rrn
+//			if (!par)continue;
+//			strcpy_s(par_tmp.RRN, sizeof(par_tmp.RRN), par);
+//
+//			par = strtok_s(NULL, "|", &con);
+//			if (!par)continue;
+//			strcpy_s(par_tmp.ADRESS, sizeof(par_tmp.ADRESS), par);
+//
+//			par = strtok_s(NULL, "|", &con);
+//			if (!par)continue;
+//			strcpy_s(par_tmp.ADRESS_AFTER, sizeof(par_tmp.ADRESS_AFTER), par);
+//
+//			fclose(fpr);
+//			break;
+//		}
+//
+//	}
+//	fclose(fpr);
+//}
+
+//회원가입
+void sign_up() {
+
+	FILE* fpa; //파일 닫아주기
+	int i = 0;
+	int a = 0; //형식 토큰
+	int b = 0;
+
+	privet signpv;
+	printf("ID 입력 ");
+	int c = 0;
+	while (!c) {
+	read_stdin(signpv.ID, sizeof(signpv.ID));
+
+	  if (my_exists(signpv.ID, id)) {
+		 printf("이미 존재하는 ID입니다.\n");
+		 printf("ID 입력 ");
+		 continue;
+	  }
+	  c = 1;
+	}
+	printf("PASSWARD 입력 ");
+	read_stdin(signpv.PASSWARD, sizeof(signpv.PASSWARD));
+	printf(" NAME 입력 ");
+	read_stdin(signpv.NAME, sizeof(signpv.NAME));
+
+
+	printf("NUMBER 입력 010-1234-1234 형식 맞추기");
+	
+	//###-####-####
+	a = 0;
+	while (!a) {
+		read_stdin(signpv.NUMBER, sizeof(signpv.NUMBER));
+
+		if ((strlen(signpv.NUMBER) != 13)|| signpv.NUMBER[3] != '-'
+			|| signpv.NUMBER[8] != '-')
+		{
+			printf("NUMBER 다시 입력하세요\n");
+			continue;
+		}
+		b = 1;
+		for (i = 0; i < 13; i++) {
+			if (i == 3 || i == 8)continue;
+
+			if (!isdigit((unsigned char)signpv.NUMBER[i])) {
+				printf("숫자만 사용해서 다시 입력하세요\n");
+				b = 0;
+				break;
+			}
+		}
+		if (!b) {
+			continue;
+		}
+
+		a = 1;
+	}
+
+
+	if (my_exists(signpv.NUMBER, number)) {
+		printf("이미 존재하는 NUMBER입니다.\n");
+		return;
+	}
+
+	printf("RRM 입력 123456-8901234 형식 맞추기");
+	a = 0;
+	while (!a) {
+		read_stdin(signpv.RRN, sizeof(signpv.RRN));
+
+		if (strlen(signpv.RRN) != 14 || signpv.RRN[6] != '-') {
+			printf("RRN 형식과 다릅니다 다시입력하세요\n");
+			continue;
+		}
+		b = 1;
+		for (i = 0; i < 14; i++) {
+			if (i == 6)continue;
+			if (!isdigit((unsigned char)signpv.RRN[i])) {
+				b = 0;
+					break;
+			}
+		}
+		if (!b) {
+			continue;
+		}
+		a = 1;
+	}
+	printf("ADRESS 입력 ");
+	read_stdin(signpv.ADRESS, sizeof(signpv.ADRESS));
+	printf("ADRESS_AFTER 입력 ");
+	read_stdin(signpv.ADRESS_AFTER, sizeof(signpv.ADRESS_AFTER));
+
+	//오류 제거
+	//fopen_s 정상 0반환 FILE 오류 NULL
+	if (fopen_s(&fpa, "i.txt", "a+") != 0 || fpa == NULL)
+	{
+		printf("파일이 열리지 않았다");
+		return;
+	}
+
+	//fputs
+	fprintf(fpa, "%s|%s|%s|%s|%s|%s|%s\n",
+		signpv.ID, signpv.PASSWARD, signpv.NAME, signpv.NUMBER,
+		signpv.RRN, signpv.ADRESS, signpv.ADRESS_AFTER);
+	//*
+	fclose(fpa);
+}
+
+//로그인
+void login() {
+	
+
+	//로그인 입력
+	char logid[20] = { 0 };
+	char logpd[20] = { 0 };
+	//파일 비교
+	char str[256];//pv가 너무 큼
+	char* pv_id = NULL;
+	char* pv_pd = NULL;
+	int flag = 0;
+
+	//파일 닫아주기
+	FILE* fpr; //파일열때
+	//fopen_s 정상 0 반환 FILE 오류 NULL
+	if (fopen_s(&fpr, "i.txt", "r") != 0 || fpr == NULL)
+	{
+		printf("login 파일열기 실패");
+		return;
+	}
+	//아이디 입력
+	printf("ID 입력:");
+	read_stdin(logid, sizeof(logid));
+	printf("PASS WARARD 입력:");
+	read_stdin(logpd, sizeof(logpd));
+
+	//파일에서 찾기 반복해서 찾아야함 
+	while (fgets(str, sizeof(str), fpr) != NULL) {
+		str[strcspn(str, "\r\n")] = '\0';
+		//파일로 열었으니까 stdin 처럼 \n버퍼에 없나?
+		//줄 마다 초기화
+		char* con = NULL;
+		pv_id = strtok_s(str, "|", &con);
+		pv_pd = strtok_s(NULL, "|", &con);
+		//건너뛰기
+		if (pv_id == NULL || pv_pd == NULL) {
+			continue;
+		}
+		//비교성공
+		if (strcmp(logid, pv_id) == 0
+			&& strcmp(logpd, pv_pd) == 0)
+		{
+			printf("LOGIN\n");
+			
+			fprintf(stdout, "ID:%s PD:%s\n", logid, logpd);
+			flag = 1;
+			//반복문이라 나가야함 
+			break;
+
+		}
+	}
+	//비교 실패 여러번 실패 하니까 while문 밖으로
+	if (flag != 1) {
+		printf("LOGIN FAIL\n");
+	}
+	//*
+	fclose(fpr);
+}
+
+void find_id() {
+	FILE* fpr = NULL;
+	char str[256] = { 0 };
+	privet findpv;
+
+	char* file;
+	
+
+	char find_name[20];
+	char find_number[14];
+	char find_RRN[15];
+
+	int i = 0;
+
+	
+	printf("name 입력:");
+	read_stdin(find_name, sizeof(find_name));
+	printf("number 입력:");
+	read_stdin(find_number, sizeof(find_number));
+	printf("RRN 입력:");
+	read_stdin(find_RRN, sizeof(find_RRN));
+
+	if (fopen_s(&fpr, "i.txt", "r") != 0 || fpr == NULL) {
+		printf("회원정보를 못찾음");
+		return;
+	}
+	while (fgets(str, sizeof(str), fpr) != NULL)
+	{
+		str[strcspn(str, "\r\n")] = '\0';
+
+		char* con = NULL;//변수
+		file = strtok_s(str, "|", &con);//id
+		if (!file)continue;
+		strcpy_s(findpv.ID, sizeof(findpv.ID), file);
+
+		file = strtok_s(NULL, "|", &con);//pd
+		if (!file)continue;
+		strcpy_s(findpv.PASSWARD, sizeof(findpv.PASSWARD), file);
+		file = strtok_s(NULL, "|", &con); //name
+		if (!file)continue;
+		strcpy_s(findpv.NAME, sizeof(findpv.NAME), file);
+		file = strtok_s(NULL, "|", &con); //number
+		if (!file)continue;
+		strcpy_s(findpv.NUMBER, sizeof(findpv.NUMBER), file);
+		file = strtok_s(NULL, "|", &con); //rrn
+		if (!file)continue;
+		strcpy_s(findpv.RRN, sizeof(findpv.RRN), file);
+
+		
+		if (strcmp(findpv.NAME, find_name) == 0 &&
+			strcmp(findpv.NUMBER, find_number) == 0 &&
+			strcmp(findpv.RRN, find_RRN) == 0)
+		{
+			printf("찾은 id :\n");
+			fputs(findpv.ID, stdout);
+			printf("찾은 pd :\n");
+			fputs(findpv.PASSWARD, stdout);
+			i = 1;
+			break;
+		}
+	}
+	if (i != 1) {
+		printf("find 실패");
+	}
+	fclose(fpr);
+}
+
+void admin_list() {
+
+	FILE* fpr = NULL;
+	char str[256] = { 0 };
+
+	char* file;
+
+	char masked_number[14];
+	char masked_rrn[15];
+	privet tmp;
+
+	//파일 열기
+	if (fopen_s(&fpr, "i.txt", "r") != 0 || fpr == NULL) {
+		printf("admin FILE");
+		return;
+	}
+	while (fgets(str, sizeof(str), fpr) != NULL) {
+
+		str[strcspn(str, "\r\n")] = '\0';
+		//fputs(str, stdout);
+		char* con = NULL;
+
+		file = strtok_s(str, "|", &con); //id;
+		if (!file)continue;
+		strcpy_s(tmp.ID,sizeof(tmp.ID), file);
+
+		file = strtok_s(NULL, "|", &con);//pd
+		if (!file)continue;
+		strcpy_s(tmp.PASSWARD, sizeof(tmp.PASSWARD), file);
+		
+		file = strtok_s(NULL, "|", &con); //name
+		if (!file)continue;
+		strcpy_s(tmp.NAME, sizeof(tmp.NAME), file);
+		
+		file = strtok_s(NULL, "|", &con);//number
+		if (!file)continue;
+		strcpy_s(tmp.NUMBER, sizeof(tmp.NUMBER), file);
+		
+		file = strtok_s(NULL, "|", &con); //rrn
+		if (!file)continue;
+		strcpy_s(tmp.RRN, sizeof(tmp.RRN), file);
+		
+
+		mask_number(masked_number, sizeof(masked_number),
+			tmp.NUMBER);
+		mask_rrn(masked_rrn, tmp.RRN);
+
+		//fputs(file_id, stdout);
+		////putchar('|');
+		//fputs(file_pd, stdout);
+		//fputs(file_name, stdout);
+		//fputs(masked_number, stdout);
+		//fputs(masked_rrn, stdout);
+		//getchar();//enter 키로한줄씩 뽑기
+		//putchar('\n');
+
+		fprintf(stdout, "%s|%s|%s|%s|%s\n",
+	tmp.ID,tmp.PASSWARD,tmp.NAME, masked_number,masked_rrn);
+		//fprint 가 더 좋지 않나?
+
+	}
+	fclose(fpr);
+}
+
+int main() {
+	int manu;
+	int ch = 0;
+	while (1) {
+		printf("1.회원가입\n");
+		printf("2.로그인\n");
+		printf("3.ID,PW 찾기\n");
+		printf("4.관리자모드(회원 목록 보기)\n");
+		printf("5.종료\n");
+		
+		scanf_s("%d", &manu);
+		while ((ch = getchar()) != '\n' && ch != EOF) {}
+
+		if (manu == 1) {
+			sign_up();
+		}
+		else if (manu == 2) {
+			login();
+		}
+		else if (manu == 3) {
+			find_id();
+		}
+		else if (manu == 4) {
+			admin_list();
+		}
+		else if (manu == 5) {
+			break;
+		}
+		else {
+			printf("잘못된 입력입니다");
+
+		}
+	}
+
+	return 0;
+}
