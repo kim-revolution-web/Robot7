@@ -1,7 +1,8 @@
 # ⚙️ WSL2 + Ubuntu 설치 및 설정 가이드
 
 ---
-
+admin1
+admin1
 ## 🧩 BIOS 설정
 
 WSL2를 사용하기 전에 BIOS에서 아래 항목을 **Enabled**로 설정하세요.
