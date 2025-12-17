@@ -80,7 +80,19 @@ wsl
 # Ubuntu 터미널에서
 code .
 ```
+### 🔌 Plug-in 
 
+1. **Korean Language Pack**  
+   → 영문이 편한 분은 설치하지 않아도 됩니다.
+
+2. **C/C++**, **C/C++ Extension**  
+   → *Microsoft* 제품을 설치하세요.
+
+3. **WSL**  
+   → WSL에 접속하기 위한 플러그인입니다.  
+     이 역시 *Microsoft* 제품을 설치하세요
+   
+code에서 확장을 다 깔아함
 ---
 
 ## 🧹 4. 배포판 관리
@@ -162,17 +174,6 @@ gcc -o hello hello.c       # 실행 파일 생성
 
 ---
 
-### 🔌 Plug-in 
-
-1. **Korean Language Pack**  
-   → 영문이 편한 분은 설치하지 않아도 됩니다.
-
-2. **C/C++**, **C/C++ Extension**  
-   → *Microsoft* 제품을 설치하세요.
-
-3. **WSL**  
-   → WSL에 접속하기 위한 플러그인입니다.  
-     이 역시 *Microsoft* 제품을 설치하세요
 
 
 출처 :https://github.com/HaSense/IndustrialRobot_2507/blob/main/WSL_%EC%85%8B%ED%8C%85%20%EB%B0%8F%20%EA%B0%9C%EB%B0%9C%EC%84%A4%EC%A0%95.md
