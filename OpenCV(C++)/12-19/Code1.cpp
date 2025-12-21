@@ -3,42 +3,42 @@
 void show1() {
 	cv::Mat image1 = cv::imread("lena.jpg");
 	cv::Mat image2 = cv::imread("ka.jpg");
-	cv::Mat image3; // ÇÈ¼¿À» for¹®À¸·¯ ÀüºÎ ²ø¾î¿À´Â °Å
+	cv::Mat image3; // í”½ì…€ì„ forë¬¸ìœ¼ëŸ¬ ì „ë¶€ ëŒì–´ì˜¤ëŠ” ê±°
 	if (image1.empty() || image2.empty())
 	{
-		std::cerr << "ÆÄÀÏµéÀÌ ¾ø½À´Ï´Ù." << "\n";
+		std::cerr << "íŒŒì¼ë“¤ì´ ì—†ìŠµë‹ˆë‹¤." << "\n";
 		return;
 	}
-	image3 = image1.clone();//clone À¸·Î º¹»çÇÏ´Ù
-	std::cout << "¸îÂ÷¿ø : " << image1.dims << "\n";
-	std::cout << "ÄÃ·³ : " << image1.cols << "\n";
-	std::cout << "Çà(row) :" << image1.rows << "\n";
+	image3 = image1.clone();//clone ìœ¼ë¡œ ë³µì‚¬í•˜ë‹¤
+	std::cout << "ëª‡ì°¨ì› : " << image1.dims << "\n";
+	std::cout << "ì»¬ëŸ¼ : " << image1.cols << "\n";
+	std::cout << "í–‰(row) :" << image1.rows << "\n";
 	cv::namedWindow("lena");
 	cv::imshow("lena", image1);
-	std::cout << "¸îÂ÷¿ø ?" << image2.dims << "\n";
-	std::cout << "ÄÃ·³ ?" << image2.cols << "\n";
-	std::cout << "Çà(row) ?" << image2.rows << "\n";
+	std::cout << "ëª‡ì°¨ì› ?" << image2.dims << "\n";
+	std::cout << "ì»¬ëŸ¼ ?" << image2.cols << "\n";
+	std::cout << "í–‰(row) ?" << image2.rows << "\n";
 	cv::namedWindow("ka");
 	cv::imshow("ka", image2);
-	std::cout << "¸îÂ÷¿ø :" << image3.dims << "\n";
-	std::cout << "ÄÃ·³ :" << image3.cols << "\n";
-	std::cout << "Çà(row) :" << image3.rows << "\n";
+	std::cout << "ëª‡ì°¨ì› :" << image3.dims << "\n";
+	std::cout << "ì»¬ëŸ¼ :" << image3.cols << "\n";
+	std::cout << "í–‰(row) :" << image3.rows << "\n";
 	cv::namedWindow("lena1");
 	cv::imshow("lena1", image3);
-	cv::waitKey(0); //¾²·¹µå°¡ ¾È²¨Áö°Ô Á¤ÁöÇØÁÜ
-	cv::destroyAllWindows(); // ÀüºÎ ´İ¾ÆÁà
+	cv::waitKey(0); //ì“°ë ˆë“œê°€ ì•ˆêº¼ì§€ê²Œ ì •ì§€í•´ì¤Œ
+	cv::destroyAllWindows(); // ì „ë¶€ ë‹«ì•„ì¤˜
 }
 
 void show2() {
 	cv::namedWindow("Color");
 	//for (int i = 0; i < 256; i++) {
-	//	cv::Mat image(512, 512, CV_8UC3, cv::Scalar(i, 0, 0)); //8u 8bite c3 chennel 3°³ /bgr
+	//	cv::Mat image(512, 512, CV_8UC3, cv::Scalar(i, 0, 0)); //8u 8bite c3 chennel 3ê°œ /bgr
 	//	cv::imshow("Color", image);
 	//	cv::waitKey(10);
 	//}
 	//
 	//for (int i = 255; i >0; i--) {
-	//	cv::Mat image(512, 512, CV_8UC3, cv::Scalar(0, i, 0)); //8u 8bite c3 chennel 3°³ /bgr
+	//	cv::Mat image(512, 512, CV_8UC3, cv::Scalar(0, i, 0)); //8u 8bite c3 chennel 3ê°œ /bgr
 	//	cv::imshow("Color", image);
 	//	cv::waitKey(10);
 	//}
@@ -75,9 +75,9 @@ void show2() {
 
 void show3() {
 
-	cv::Mat img3=cv::Mat::zeros(512, 512, CV_8UC1); //0µµ °ËÁ¤
-	cv::Mat img2 = cv::Mat::ones(512, 512, CV_8UC1)*255; //1µµ °ËÁ¤
-	cv::Mat img1 = cv::Mat::eye(512, 512, CV_8UC1)*255; //Ç×µî Çà·Ä
+	cv::Mat img3=cv::Mat::zeros(512, 512, CV_8UC1); //0ë„ ê²€ì •
+	cv::Mat img2 = cv::Mat::ones(512, 512, CV_8UC1)*255; //1ë„ ê²€ì •
+	cv::Mat img1 = cv::Mat::eye(512, 512, CV_8UC1)*255; //í•­ë“± í–‰ë ¬
 	cv::namedWindow("window1");
 	cv::imshow("window1", img1);
 	cv::namedWindow("window2");
@@ -94,16 +94,16 @@ void show4() {
 	cv::Mat dog1= cv::imread("dog.bmp");
 
 	if (dog1.empty()) {
-		std::cerr << "°³ »çÁø¾øÀ½";
+		std::cerr << "ê°œ ì‚¬ì§„ì—†ìŒ";
 		return;
 	}
 	
-	cv::Mat dog2 = dog1.clone(); //±íÀº º¹»ç
+	cv::Mat dog2 = dog1.clone(); //ê¹Šì€ ë³µì‚¬
 
-	cv::Mat dog3; //±íÀº º¹»ç
+	cv::Mat dog3; //ê¹Šì€ ë³µì‚¬
 	dog1.copyTo(dog3);
 
-	cv::Mat img4 = dog1; //copy constructor º¹»ç //¾ãÀº º¹»ç ¼Óµµ ºü¸§ 
+	cv::Mat img4 = dog1; //copy constructor ë³µì‚¬ //ì–‡ì€ ë³µì‚¬ ì†ë„ ë¹ ë¦„ 
 
 	cv::Mat rot;
 	cv::rotate(dog1, rot, cv::ROTATE_90_CLOCKWISE);
@@ -130,11 +130,12 @@ void show5() {
 
 	cv::Mat img1 = cv::imread("cat.bmp");
 	if (img1.empty()) {
-		std::cerr << "°í¾çÀÌ¾ø´Ù";
+		std::cerr << "ê³ ì–‘ì´ì—†ë‹¤";
+		return;
 	}
-	cv::Mat img2=~img1;//»ö»ó ¹İÀü
+	cv::Mat img2=~img1;//ìƒ‰ìƒ ë°˜ì „
 
-	cv::Mat img3 = img1(cv::Rect(220, 120, 340, 240));//¿øÇÏ´Â ¿µ¿ªÀ» ÀÚ¸¥´Ù
+	cv::Mat img3 = img1(cv::Rect(220, 120, 340, 240));//ì›í•˜ëŠ” ì˜ì—­ì„ ìë¥¸ë‹¤
 
 	cv::namedWindow("cat");
 	cv::imshow("cat", img1);
@@ -170,14 +171,14 @@ void show7() {
 	if (img1.empty()) {
 		return;
 	}
-	std::cout << "ÀÌ¹ÌÁö Æø:" << img1.cols << std::endl;
-	std::cout << "ÀÌ¹ÌÁö ³ôÀÌ:" << img1.rows << std::endl;
-	std::cout << "ÀÌ¹ÌÁö »çÀÌÁî:" << img1.size() << std::endl;
-	std::cout << "ÇÈ¼¿ÀÇ ÇÑ°³ »çÀÌÁî:" << img1.elemSize() << std::endl;
-	std::cout << "Ã¤³Î:" << img1.channels() << std::endl;
+	std::cout << "ì´ë¯¸ì§€ í­:" << img1.cols << std::endl;
+	std::cout << "ì´ë¯¸ì§€ ë†’ì´:" << img1.rows << std::endl;
+	std::cout << "ì´ë¯¸ì§€ ì‚¬ì´ì¦ˆ:" << img1.size() << std::endl;
+	std::cout << "í”½ì…€ì˜ í•œê°œ ì‚¬ì´ì¦ˆ:" << img1.elemSize() << std::endl;
+	std::cout << "ì±„ë„:" << img1.channels() << std::endl;
 
-	if (img1.type() == CV_8UC1)std::cout << "±×·¹ÀÌ" << std::endl;
-	else if (img1.type()== CV_8UC3)std::cout << "ÄÃ·¯" << std::endl;
+	if (img1.type() == CV_8UC1)std::cout << "ê·¸ë ˆì´" << std::endl;
+	else if (img1.type()== CV_8UC3)std::cout << "ì»¬ëŸ¬" << std::endl;
 	else { std::cout << "PNG" << std::endl; }
 
 	cv::namedWindow("c");
@@ -225,7 +226,7 @@ void show8() {
 }
 
 
-void printMat(cv::InputArray _mat) //cv::mat Å¸ÀÔÀÌ °°°Å³ª ºÎ¸ğÅ¬·¡½º¶ó ¹Ş¾ÆÁÙ¼ö ÀÖ´Ù
+void printMat(cv::InputArray _mat) //cv::mat íƒ€ì…ì´ ê°™ê±°ë‚˜ ë¶€ëª¨í´ë˜ìŠ¤ë¼ ë°›ì•„ì¤„ìˆ˜ ìˆë‹¤
 {
 	cv::Mat mat = _mat.getMat();
 	std::cout << mat << std::endl;
@@ -240,5 +241,6 @@ void inputArrayOF() {
 
 void show9() {
 	inputArrayOF();
+
 
 }
