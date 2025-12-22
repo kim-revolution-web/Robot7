@@ -1,11 +1,11 @@
 #include "opencv2/opencv.hpp"
 
-//¾ÈµÊ
+
 void show20() {
 
 	cv::Mat src = cv::imread("lena.jpg", cv::IMREAD_GRAYSCALE);
 	cv::Mat dst = src + 100;
-	cv::Mat dst2;
+	cv::Mat dst2(src.size(), src.type());
 	for (int i = 0; i < src.rows; ++i)
 	{
 		for (int j = 0; j < src.cols; ++j) {
@@ -54,12 +54,13 @@ void show22() {
 void show23() {
 
 	cv::Mat src = cv::imread("hawkes.bmp", cv::IMREAD_GRAYSCALE);
-	double min, max = 0.0; //¿©±â °ªÀ» ¹Ù²ã ÁÖ·Á°í ¹Ø¿¡¼­ &¸¦ ÇØÁÖ´Â °ÍÀÌ´Ù.
+	double min, max = 0.0; //ì—¬ê¸° ê°’ì„ ë°”ê¿” ì£¼ë ¤ê³  ë°‘ì—ì„œ &ë¥¼ í•´ì£¼ëŠ” ê²ƒì´ë‹¤.
 	cv::minMaxLoc(src, &min, &max);
 	cv::Mat dst=(src - min) * 255 / (max - min);
 	cv::imshow("src", src);
 	cv::imshow("dst", dst);
 	cv::waitKey();
 	cv::destroyAllWindows();
+
 
 }
