@@ -1,3 +1,6 @@
+
+//고석민씨
+
 #include <windows.h>	// ballsound 함수를 위한 헤더
 #include "opencv2/opencv.hpp"
 #include <iostream>
