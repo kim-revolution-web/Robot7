@@ -93,7 +93,7 @@ uic 같은 UI 변환 도구(환경에 따라)
 
 <img width="836" height="342" alt="image" src="https://github.com/user-attachments/assets/8f1ce690-14d1-4c19-a15d-30f049250b9f" />
 <img width="795" height="490" alt="image" src="https://github.com/user-attachments/assets/db857f19-a9a0-47f4-9630-acad003a534c" />
-<img width="831" height="279" alt="image" src="https://github.com/user-attachments/assets/11605c9b-5982-4b26-a5be-c5813c018996" />
+<img width="831" height="279" alt="image" src="https://github.com/user-attachments/assets/11605c9b-5982-4b26-a5be-c5813c018996" />  
 인터프리터 경로 입력에 주소입력
 
 
