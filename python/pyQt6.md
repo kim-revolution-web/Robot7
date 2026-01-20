@@ -36,12 +36,13 @@ python3 -m venv .venv
 - 현재 폴더 안에 .venv라는 폴더를 만들고, 그 안에 전용 파이썬/라이브러리 공간을 세팅한다는 의미
 - python3 -m venv .venv를 실행하면 파이썬이 .venv 폴더를 스스로 만들고 그 안에 가상환경 파일들을 채워 넣어.
 
+
 ```bash
 source .venv/bin/activate
 python -m pip install -U pip
 python -m pip install PyQt6
-
 ```
+
 - source는 그 스크립트를 “현재 터미널(현재 쉘)”에서 실행하게 해주는 명령이야.
 - .venv/ : 가상환경 폴더
 - bin/ : 실행 파일/스크립트들이 들어있는 폴더
@@ -58,5 +59,32 @@ VIRTUAL_ENV 같은 환경변수를 세팅하고
 끄고 싶으면 deactivate
 ```
 
+- m이 뭐야?
+- python -m pip는 “pip라는 모듈을 현재 파이썬으로 실행해라”라는 뜻이야.
+- 이걸 쓰는 이유:
+- pip만 치면 다른 파이썬의 pip가 잡힐 때가 있는데,
+- python -m pip는 지금 선택된 python(특히 가상환경의 python) 에 딱 맞는 pip를 실행해줌.
+
+- U는 뭐야?
+- U는 --upgrade의 줄임말.
+- 이미 설치된 pip가 있으면 최신 버전으로 업그레이드 해.
+
+```bash
+sudo apt update
+sudo apt install -y qttools5-dev-tools
+```
+- sudo apt update=“목록 갱신”
+- 실제로 시스템 업그레이드는 sudo apt upgrade임
+이건 “Qt5 개발 도구들(툴 모음)” 패키지야.
+PyQt6을 설치하는 것 자체랑은 별개인데, Qt 관련 유틸리티가 필요할 때 설치하는 경우가 있어.
 
 
+```bash
+이 안에 대표적으로 들어가는 게:
+Designer(디자이너): 버튼/창을 드래그로 배치해서 .ui 파일 만드는 GUI 툴
+assistant, linguist 같은 Qt 개발용 도구들
+uic 같은 UI 변환 도구(환경에 따라)
+```
+
+- PyQt6 = 파이썬에서 Qt GUI 만들기 라이브러리
+- Qt tools = Qt를 개발할 때 쓰는 “외부 도구(프로그램)”들
