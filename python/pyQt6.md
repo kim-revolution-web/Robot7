@@ -65,9 +65,11 @@ VIRTUAL_ENV 같은 환경변수를 세팅하고
 - pip만 치면 다른 파이썬의 pip가 잡힐 때가 있는데,
 - python -m pip는 지금 선택된 python(특히 가상환경의 python) 에 딱 맞는 pip를 실행해줌.
 
+
 - U는 뭐야?
 - U는 --upgrade의 줄임말.
 - 이미 설치된 pip가 있으면 최신 버전으로 업그레이드 해.
+
 
 ```bash
 sudo apt update
