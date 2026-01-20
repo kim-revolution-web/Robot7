@@ -26,7 +26,7 @@ sudo apt install -y python3-venv
 python3 -m venv .venv
 ```
 
--sudo **“관리자 권한으로 실행”**하는 명령어야.
+-sudo **“관리자 권한으로 실행”**하는 명령어야.  
 -apt 우분투(리눅스) 프로그램 설치/업데이트 도구야. (패키지 관리자)
 
 -python3 -m venv .venv
