@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+main.ui (Qt Designer UI)
+
+[역할]
+- PyQt6에서 uic.loadUi(...)로 로드되는 UI 레이아웃 파일(XML).
+- pyqt.py에서 각 버튼의 objectName을 기준으로 버튼을 찾아 이벤트를 연결한다.
+
+[핵심 연결 포인트]
+- objectName(예: left, right, go, back, stop, auto1, manual)
+  → pyqt.py의 self.mapping 딕셔너리에서 로봇 명령(cmd)로 변환됨
+
+예)
+- objectName="left"   → cmd "LEFT"  → RobotSystem.command_queue로 전달
+- objectName="auto1"  → cmd "AUTO"  → RobotSystem.control_mode = "AUTO"
+-->
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>978</width>
+    <height>786</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+
+  <!-- ================= 모드 전환 버튼 =================
+       pyqt.py에서 objectName "auto1" / "manual"을 찾아
+       클릭 시 cmd "AUTO" / "MANUAL"을 1회 전송합니다.
+  -->
+
+  <!-- [AUTO 모드] 버튼: 자율주행 모드로 전환 (cmd: AUTO) -->
+  <widget class="QPushButton" name="auto1">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>170</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>auto</string>
+   </property>
+  </widget>
+
+  <!-- [MANUAL 모드] 버튼: 수동 조작 모드로 전환 (cmd: MANUAL) -->
+  <widget class="QPushButton" name="manual">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>180</y>
+     <width>101</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Manual</string>
+   </property>
+  </widget>
+
+  <!-- ================= 이동 버튼 그룹 =================
+       그룹 박스 안의 5개 버튼은 이동/정지 조작에 사용됩니다.
+       pyqt.py에서 left/right/go/back 버튼은 "누르는 동안 계속" 전송(hold)되고,
+       stop 버튼은 클릭 시 즉시 STOP 1회 전송합니다.
+  -->
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>300</x>
+     <y>220</y>
+     <width>301</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>GroupBox</string>
+   </property>
+
+   <!-- [BACK] 뒤로 이동(선속도 - 방향 누적) (cmd: BACK) -->
+   <widget class="QPushButton" name="back">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>140</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: #000000;
+  color: white;
+  border-radius: 30px;
+  padding: 10px;
+  font-weight: bold;
+}
+QPushButton:hover {
+  background-color: #0000ff;
+}
+QPushButton:pressed {
+  background-color: #0000ff;
+}</string>
+    </property>
+    <property name="text">
+     <string>back</string>
+    </property>
+   </widget>
+
+   <!-- [GO] 앞으로 이동(선속도 + 방향 누적) (cmd: GO) -->
+   <widget class="QPushButton" name="go">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>20</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: #000000;
+  color: white;
+  border-radius: 30px;
+  padding: 10px;
+  font-weight: bold;
+}
+QPushButton:hover {
+  background-color: #0000ff;
+}
+QPushButton:pressed {
+  background-color: #0000ff;
+}</string>
+    </property>
+    <property name="text">
+     <string>go</string>
+    </property>
+   </widget>
+
+   <!-- [STOP] 즉시 정지(선속도/각속도 0) (cmd: STOP)
+        pyqt.py에서 clicked()로 즉시 1회 전송 + hold 타이머 종료
+   -->
+   <widget class="QPushButton" name="stop">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>80</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: #ff0000;
+  color: white;
+  border-radius: 12px;
+  padding: 10px;
+  font-weight: bold;
+}
+QPushButton:hover {
+  background-color: #ffff00;
+}
+QPushButton:pressed {
+  background-color: #ffaa00;
+}</string>
+    </property>
+    <property name="text">
+     <string>stop</string>
+    </property>
+   </widget>
+
+   <!-- [LEFT] 좌회전(각속도 + 방향 누적) (cmd: LEFT) -->
+   <widget class="QPushButton" name="left">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>80</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: #000000;
+  color: white;
+  border-radius: 30px;
+  padding: 10px;
+  font-weight: bold;
+}
+QPushButton:hover {
+  background-color: #ff00ff;
+}
+QPushButton:pressed {
+  background-color: #ff00ff;
+}</string>
+    </property>
+    <property name="text">
+     <string>left</string>
+    </property>
+   </widget>
+
+   <!-- [RIGHT] 우회전(각속도 - 방향 누적) (cmd: RIGHT) -->
+   <widget class="QPushButton" name="right">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>80</y>
+      <width>101</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>0</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+  background-color: #000000;
+  color: white;
+  border-radius: 30px;
+  padding: 10px;
+  font-weight: bold;
+}
+QPushButton:hover {
+  background-color: #ff00ff;
+}
+QPushButton:pressed {
+  background-color: #ff00ff;
+}</string>
+    </property>
+    <property name="text">
+     <string>right</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
