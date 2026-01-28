@@ -210,10 +210,10 @@ if __name__ == "__main__":
 
     #  큐에 들어오는 명령 처리(중요!)
     def poll_queue():
-        while not robot.command_queue.empty(): #empty 신호가 
-            msg = robot.command_queue.get()
-            cmd = msg.get("cmd", "").upper()
-            print("[DUMMY ROBOT] got:", msg)
+        while not robot.command_queue.empty(): #큐에 값이 남아있는 동안 반복
+            msg = robot.command_queue.get() # 큐에서 메시지 하나를 꺼내서 msg에 저장
+            cmd = msg.get("cmd", "").upper() # "cmd" 키가 있으면 그 값을 가져오고, 없으면 기본값 ""(빈 문자열)을 쓰고 대문자로 만들어라            
+            print("[DUMMY ROBOT] got:", msg) 
 
             # 모드 변경
             if cmd in ["AUTO", "MANUAL"]:
