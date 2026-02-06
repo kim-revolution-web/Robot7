@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1054</width>
+    <height>868</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>130</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="img/img.qrc">:/newPrefix/김채연.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_right">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>340</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+padding: 0px;
+border-image: url(file:///home/robot/Desktop/961febbbfd4fa2e4.jpg);</string>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../Desktop/1961febbbfd4fa2e4.jpg</normaloff>../../../../Desktop/1961febbbfd4fa2e4.jpg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QListWidget" name="listWidget">
+   <property name="geometry">
+    <rect>
+     <x>700</x>
+     <y>30</y>
+     <width>341</width>
+     <height>471</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_front">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>130</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+padding: 0px;
+border-image: url(file:///home/robot/Desktop/961febbbfd4fa2e4.jpg);</string>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../Desktop/1961febbbfd4fa2e4.jpg</normaloff>../../../../Desktop/1961febbbfd4fa2e4.jpg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_back">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>530</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+padding: 0px;
+border-image: url(file:///home/robot/Desktop/961febbbfd4fa2e4.jpg);</string>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../Desktop/1961febbbfd4fa2e4.jpg</normaloff>../../../../Desktop/1961febbbfd4fa2e4.jpg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="btn_left">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>330</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border: none;
+padding: 0px;
+border-image: url(file:///home/robot/Desktop/961febbbfd4fa2e4.jpg);</string>
+   </property>
+   <property name="text">
+    <string>PushButton</string>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../Desktop/1961febbbfd4fa2e4.jpg</normaloff>../../../../Desktop/1961febbbfd4fa2e4.jpg</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>540</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="img/img.qrc">:/newPrefix/1961febbbfd4fa2e4.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>340</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="img/img.qrc">:/newPrefix/401452_490340_4225.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>330</y>
+     <width>200</width>
+     <height>200</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="img/img.qrc">:/newPrefix/humor_1609476_20250823150432_b8b00473c29481b4_poster.jpg</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
+  <zorder>label_3</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label</zorder>
+  <zorder>btn_left</zorder>
+  <zorder>btn_back</zorder>
+  <zorder>btn_right</zorder>
+  <zorder>btn_front</zorder>
+  <zorder>listWidget</zorder>
+ </widget>
+ <resources>
+  <include location="img/img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
