@@ -64,7 +64,7 @@ class Calculator(Node):
       self.get_logger().info('Subscribed argument b: {0}'.format(self.argument_b))
 
 #----------------------------------------------------------------------------
-    def get_arithmetic_operator(self, request, response): #action 받는 부분
+    def get_arithmetic_operator(self, request, response): #service받는 부분
         self.argument_operator = request.arithmetic_operator
 
         self.argument_result = self.calculate_given_formula(
@@ -105,26 +105,28 @@ class Calculator(Node):
         return self.argument_result
 
 #-----------------------------------------------------------------------------------
-    ef execute_checker(self, goal_handle): #목표 핸들러?
+    def execute_checker(self, goal_handle): #goal_handle은 “이번 Goal(요청 1건)”을 대표하는 객체
         self.get_logger().info('Execute arithmetic_checker action!')
 
-        feedback_msg = ArithmeticChecker.Feedback() #topic 응답이니까 response 같은 느낌?
+        feedback_msg = ArithmeticChecker.Feedback() #액션 진행 중 여러 번 보내는 중간보고(스트리밍)
         feedback_msg.formula = [] #list
         total_sum = 0.0
         goal_sum = goal_handle.request.goal_sum #goal_handle.request : 클라이언트가 보낸 Goal 메시지(여기선 goal_sum)
 
+       #goal_sum은 클라이언트가 Goal로 준 목표값 (더하는 대상 아님)
+       #total_sum은 서버가 로직으로 누적하는 값
         while total_sum < goal_sum: #목표치 보다 적을 때만
-            total_sum += self.argument_result #토탈에 결과값은 더해준다 .srv 에 들어있는 arithmetic_result?
-            feedback_msg.formula.append(self.argument_formula) # argument_formula 지금  빈값인데  
+            total_sum += self.argument_result #service respone 값을 로직에 누적
+            feedback_msg.formula.append(self.argument_formula) #service 에서  argument_formula 받은 값
             self.get_logger().info('Feedback: {0}'.format(feedback_msg.formula))
-            goal_handle.publish_feedback(feedback_msg) #feedback은 server에서 주니까 
+            goal_handle.publish_feedback(feedback_msg) #Feedback 토픽으로 중간상태 전송
             time.sleep(1)
 
-        goal_handle.succeed() #목표가 성공했나?
+        goal_handle.succeed() # 이 Goal을 성공 처리
 
-        result = ArithmeticChecker.Result() #결과 보내주고 받기?
+        result = ArithmeticChecker.Result() 
         result.all_formula = feedback_msg.formula
-        result.total_sum = total_sum #goal sum은 어디서 더해줘? Feedback은 topic이니깍 보내기만 하면 되고 Result는 어디서 보내고 어디서 받는거야? ,goal은 어디서 주고 받아?
+        result.total_sum = total_sum
 
         return result
 
@@ -134,7 +136,7 @@ def main(args=None):
     try:
         calculator = Calculator()
         executor = MultiThreadedExecutor(num_threads=4)
-        executor.add_node(calculator) #spain 매서드로 넣어주지 않고 직접 넣은거야?
+        executor.add_node(calculator) #sexecutor.add_node(calculator)로 노드 등록하고 executor.spin()으로 직접 돌리는 방식
         try:
             executor.spin()
         except KeyboardInterrupt:
