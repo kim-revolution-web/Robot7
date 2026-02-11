@@ -105,26 +105,26 @@ class Calculator(Node):
         return self.argument_result
 
 #-----------------------------------------------------------------------------------
-    def execute_checker(self, goal_handle):
+    ef execute_checker(self, goal_handle): #목표 핸들러?
         self.get_logger().info('Execute arithmetic_checker action!')
 
-        feedback_msg = ArithmeticChecker.Feedback()
-        feedback_msg.formula = []
+        feedback_msg = ArithmeticChecker.Feedback() #topic 응답이니까 response 같은 느낌?
+        feedback_msg.formula = [] #list
         total_sum = 0.0
-        goal_sum = goal_handle.request.goal_sum
+        goal_sum = goal_handle.request.goal_sum #goal_handle.request : 클라이언트가 보낸 Goal 메시지(여기선 goal_sum)
 
-        while total_sum < goal_sum:
-            total_sum += self.argument_result
-            feedback_msg.formula.append(self.argument_formula)
+        while total_sum < goal_sum: #목표치 보다 적을 때만
+            total_sum += self.argument_result #토탈에 결과값은 더해준다 .srv 에 들어있는 arithmetic_result?
+            feedback_msg.formula.append(self.argument_formula) # argument_formula 지금  빈값인데  
             self.get_logger().info('Feedback: {0}'.format(feedback_msg.formula))
-            goal_handle.publish_feedback(feedback_msg)
+            goal_handle.publish_feedback(feedback_msg) #feedback은 server에서 주니까 
             time.sleep(1)
 
-        goal_handle.succeed()
+        goal_handle.succeed() #목표가 성공했나?
 
-        result = ArithmeticChecker.Result()
+        result = ArithmeticChecker.Result() #결과 보내주고 받기?
         result.all_formula = feedback_msg.formula
-        result.total_sum = total_sum
+        result.total_sum = total_sum #goal sum은 어디서 더해줘? Feedback은 topic이니깍 보내기만 하면 되고 Result는 어디서 보내고 어디서 받는거야? ,goal은 어디서 주고 받아?
 
         return result
 
