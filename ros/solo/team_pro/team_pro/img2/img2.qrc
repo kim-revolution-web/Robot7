@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="newPrefix">
+    <file>arrow_down.jpg</file>
+    <file>arrow_left.jpg</file>
+    <file>arrow_right.jpg</file>
+    <file>arrow_up.jpg</file>
+    <file>stop.jpg</file>
+  </qresource>
+</RCC>
