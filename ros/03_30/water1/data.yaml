@@ -1,0 +1,5 @@
+train: C:/Users/admin/Desktop/인천 인재개발원/PycharmProjects/PythonProject/water/raw/images
+val: C:/Users/admin/Desktop/인천 인재개발원/PycharmProjects/PythonProject/water/valid/images
+
+nc: 1
+names: ['water']
