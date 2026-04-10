@@ -1,0 +1,115 @@
+import cv2
+import numpy as np
+
+CAM_INDEX = 1
+
+clicked_hsv = None
+clicked_bgr = None
+mouse_x, mouse_y = 0, 0
+
+def on_mouse(event, x, y, flags, param):
+    global clicked_hsv, clicked_bgr, mouse_x, mouse_y
+
+    frame, hsv = param
+    mouse_x, mouse_y = x, y
+
+    if event == cv2.EVENT_LBUTTONDOWN:
+        bgr = frame[y, x]
+        hsv_val = hsv[y, x]
+
+        clicked_bgr = bgr
+        clicked_hsv = hsv_val
+
+        h, s, v = int(hsv_val[0]), int(hsv_val[1]), int(hsv_val[2])
+
+        # 추천 범위 예시
+        lower = np.array([max(0, h - 5), max(0, s - 60), max(0, v - 60)])
+        upper = np.array([min(179, h + 5), min(255, s + 60), min(255, v + 60)])
+
+        print("=" * 50)
+        print(f"클릭 좌표: ({x}, {y})")
+        print(f"BGR: {bgr}")
+        print(f"HSV: {hsv_val}")
+        print(f"추천 LOWER = np.array([{lower[0]}, {lower[1]}, {lower[2]}])")
+        print(f"추천 UPPER = np.array([{upper[0]}, {upper[1]}, {upper[2]}])")
+
+cap = cv2.VideoCapture(CAM_INDEX, cv2.CAP_DSHOW)
+
+if not cap.isOpened():
+    print("카메라를 열 수 없습니다.")
+    exit()
+
+cv2.namedWindow("Camera HSV Picker")
+
+while True:
+    ret, frame = cap.read()
+    if not ret:
+        print("프레임 읽기 실패")
+        break
+
+    frame = cv2.flip(frame, 1)
+    hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+    display = frame.copy()
+
+    # 현재 마우스 위치 픽셀 값 표시
+    if 0 <= mouse_x < frame.shape[1] and 0 <= mouse_y < frame.shape[0]:
+        now_bgr = frame[mouse_y, mouse_x]
+        now_hsv = hsv[mouse_y, mouse_x]
+
+        cv2.circle(display, (mouse_x, mouse_y), 5, (0, 255, 255), -1)
+        cv2.putText(
+            display,
+            f"HSV: {int(now_hsv[0])}, {int(now_hsv[1])}, {int(now_hsv[2])}",
+            (10, 30),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.7,
+            (0, 255, 255),
+            2
+        )
+
+    # 클릭한 값 표시
+    if clicked_hsv is not None:
+        h, s, v = int(clicked_hsv[0]), int(clicked_hsv[1]), int(clicked_hsv[2])
+
+        cv2.putText(
+            display,
+            f"CLICKED HSV: [{h}, {s}, {v}]",
+            (10, 65),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.7,
+            (0, 255, 0),
+            2
+        )
+
+        lower = np.array([max(0, h - 5), max(0, s - 60), max(0, v - 60)])
+        upper = np.array([min(179, h + 5), min(255, s + 60), min(255, v + 60)])
+
+        cv2.putText(
+            display,
+            f"LOWER: [{lower[0]}, {lower[1]}, {lower[2]}]",
+            (10, 100),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.65,
+            (255, 255, 0),
+            2
+        )
+        cv2.putText(
+            display,
+            f"UPPER: [{upper[0]}, {upper[1]}, {upper[2]}]",
+            (10, 130),
+            cv2.FONT_HERSHEY_SIMPLEX,
+            0.65,
+            (255, 255, 0),
+            2
+        )
+
+    cv2.setMouseCallback("Camera HSV Picker", on_mouse, (frame, hsv))
+    cv2.imshow("Camera HSV Picker", display)
+
+    key = cv2.waitKey(1) & 0xFF
+    if key == 27 or key == ord("q"):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
