@@ -1,3 +1,5 @@
+# 화면에 마우스 클릭시 HSV 색 숫자를 알려줌
+
 import cv2
 import numpy as np
 
