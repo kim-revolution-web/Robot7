@@ -11,8 +11,8 @@ int main()
 {
     Person father; //stack - delete(x)
     //c++ 11
-    unique_ptr<Person> gildong = make_unique<Person>();// heap 객체생성 delete(x)
-    
+    unique_ptr<Person> gildong = make_unique<Person> ();// heap 객체생성 delete(x)
+
     Person* gildong2 =new Student();
     delete gildong2;
 

@@ -1,0 +1,30 @@
+{
+  "tasks": [
+    {
+      // 현재 열려 있는 C++ 파일 빌드
+      "type": "cppbuild",
+      "label": "g++ build active file",
+      "command": "/usr/bin/g++",
+      "args": [
+        "-fdiagnostics-color=always",
+        "-g",
+        "-O0",
+        "${file}",
+        "-o",
+        "${fileDirname}/build/${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}"
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "디버거에서 생성된 작업입니다."
+    }
+  ],
+  "version": "2.0.0"
+}
